@@ -1,0 +1,30 @@
+<form (ngSubmit)="save(myForm)" #myForm="ngForm">
+    <label>שם מתכון</label>
+    <input type="text" [(ngModel)]="newRecipe.Name" name="name">
+    <br>
+    <label>משך זמן הכנה</label>
+    <input type="text" [(ngModel)]="newRecipe.PreparationTimeInMinute" name="time">
+    <br>
+    <label>רמת קושי </label>
+    <input type="text" [(ngModel)]="newRecipe.Level" name="level"><br>
+
+    <label>category</label>
+    <select name="category">
+        <option>משקאות</option>
+        <option>בשר</option>
+        <option>עוגות</option>
+    </select>
+
+    <input type="button" value="add layer">
+
+    <label>layers</label>
+    <div *ngFor="let item of newRecipe.Layers ; let i=index">
+        <label>description</label>
+        <input type="text" [(ngModel)]="newRecipe.Layers[i].Description" name="desc{{i}}" >
+        <label>components</label>
+        <input type="text" *ngFor="let component of item.Components; let j=index"
+            [(ngModel)]="newRecipe.Layers[i].Components[j]" name =" comp{{i}},{{j}}" (change)="componentChange(i,j)">
+    </div>
+
+    <input>
+</form>

@@ -1,0 +1,4 @@
+<input type="text" [(ngModel)]="user.Name"/>
+<input type="password" [(ngModel)]="user.Password"/>
+<input type="button" value="login" (click)="isLogin()"/>
+<p *ngIf="isCorrectPassword">worng password</p>
