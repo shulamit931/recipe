@@ -14,17 +14,29 @@
         <option>בשר</option>
         <option>עוגות</option>
     </select>
+<label>layers</label>
+    <input type="button" value="add layer" (click)="addLayer(description.value)">
+    <label>description</label>
+        <input type="text" #description >
+<input type="text" #comp>
+<input type="button" (click)="addComponent(comp.value)">
+    
 
-    <input type="button" value="add layer">
-
-    <label>layers</label>
-    <div *ngFor="let item of newRecipe.Layers ; let i=index">
+    <!-- <div *ngFor="let item of newRecipe.Layers ; let i=index">
         <label>description</label>
-        <input type="text" [(ngModel)]="newRecipe.Layers[i].Description" name="desc{{i}}" >
+        <input type="text" [(ngModel)]="newRecipe.Layers[i].Description" name="desc{{i}}">
         <label>components</label>
         <input type="text" *ngFor="let component of item.Components; let j=index"
-            [(ngModel)]="newRecipe.Layers[i].Components[j]" name =" comp{{i}},{{j}}" (change)="componentChange(i,j)">
-    </div>
+            [(ngModel)]="newRecipe.Layers[i].Components[j]" name=" comp{{i}},{{j}}" (change)="addComponent(i,j)"
+            [libFocus]="true">
+    </div> -->
 
-    <input>
 </form>
+<div>
+    <div *ngFor="let item of newRecipe.Layers ; let i=index">
+        <p>{{newRecipe.Layers[i].Description}}</p>
+        <div>
+            <p *ngFor="let component of item.Components; let j=index">{{newRecipe.Layers[i].Components[j]}}</p>
+        </div>
+    </div>
+</div>

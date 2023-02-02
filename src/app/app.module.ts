@@ -10,6 +10,8 @@ import { AllRecipesComponent } from './all-recipes/all-recipes.component';
 import { FormsModule } from '@angular/forms';
 import { SmallRecipeComponent } from './small-recipe/small-recipe.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
+import { AngularInputFocusModule } from 'angular-input-focus';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { AddRecipeComponent } from './add-recipe/add-recipe.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularInputFocusModule
   ],
   providers: [],
   bootstrap: [AppComponent]
