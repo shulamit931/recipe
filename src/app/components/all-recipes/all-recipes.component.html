@@ -1,0 +1,28 @@
+<div class="allPage">
+    <div class="filter">
+        <h3> סנן </h3>
+        <input type="checkbox" id="filter1" [(ngModel)]="categoryFilter">
+        <label for="filter1">קטגוריה</label>
+        <br>
+        <select [(ngModel)]="categoryFilterParams">
+            <option value="2">בשר</option>
+            <option value="1">משקאות</option>
+            <option value="3">עוגות</option>
+        </select>
+        <br>
+        <input type="checkbox" id="filter2" [(ngModel)]="timeFilter">
+        <label for="filter2">זמן הכנה</label>
+        <br>
+        <input type="number" [(ngModel)]="timeFilterParams">
+        <br>
+        <input type="button" value="נקה סינון" (click)="clearFilter()">
+    </div>
+
+    <div class="allRecipes">
+        <app-small-recipe
+            *ngFor="let item of arr|categoryFilter:categoryFilter:categoryFilterParams|timeFilter:timeFilter:timeFilterParams"
+            [recipe]="item" class="recipe">
+        </app-small-recipe>
+    </div>
+</div>
+

@@ -1,0 +1,21 @@
+.allRecipes{
+    display: flex;
+   width: 100%;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   *{
+    margin:15px;
+   }
+}
+
+.filter{
+    direction: rtl;
+    border: 2px solid black;
+    height: fit-content;
+   padding:auto;
+   *{
+    margin: 5px 5px 5px 5px;
+   }
+}
+

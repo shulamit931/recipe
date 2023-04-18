@@ -1,0 +1,24 @@
+<nav  class="navbar">
+    <li [ngClass]="{'selected':url=='/login'}">
+        <a [routerLink]="['/login']">login</a>
+    </li>
+    <li [ngClass]="{'selected':url=='/allRecipes'}">
+        <a [routerLink]="['/allRecipes']"> כל המתכונים</a>
+    </li>
+    <li [ngClass]="{'selected':url=='/register'}">
+        <a [routerLink]="['/register']">הרשמה לאתר</a>
+    </li>
+
+    <li *ngIf="user" [ngClass]="{'selected':url=='/addRecipe'}">
+        <a [routerLink]="['/addRecipe']">הוספת מתכון</a>
+    </li>
+    <li *ngIf="user" >
+        <a (click)="logout()"> logout</a>
+    </li>
+    <p>
+       <span> hello {{user?user.Name:"guest"}}</span>
+       <span><mat-icon>person</mat-icon></span> 
+        
+    </p>
+</nav>
+<router-outlet></router-outlet>

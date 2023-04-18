@@ -1,0 +1,32 @@
+<label>name</label>
+<input type="text" [(ngModel)]="user.Name"/>
+<label>adress</label>
+<input type="text" [(ngModel)]="user.Address"/>
+<label>mail</label>
+<input type="text" [(ngModel)]="user.Mail"/>
+<label>password</label>
+<input type="password" [(ngModel)]="user.Password"/>
+<input type="button" value="הרשם" (click)="addNewUser()"/>
+<p *ngIf="isAlreadyExist">"משתמש זה כבר קים במערכת"</p>
+<p *ngIf="isSameUserName">"שם המשתמש שהכנסת תפוס"</p>
+
+<div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="example-container">
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" required [formControl]="pass">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      <mat-error *ngIf="pass.invalid">{{getErrorMessage()}}</mat-error>
+    
+    </mat-form-field>
+  
+

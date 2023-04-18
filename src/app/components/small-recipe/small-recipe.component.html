@@ -1,0 +1,22 @@
+<!-- <div class="smallRecipe" dir="rtl">
+    {{recipe.Name}}<br>
+    <span >משך זמן הכנה:  </span>
+    {{recipe.PreparationTimeInMinute}}<br>
+    <span>דרגת קושי:</span>
+    {{recipe.Level}}<br>
+    <img *ngIf="recipe.Image" src="../../assets/images/{{recipe.Image}}" class="image"/><br>
+    <input type="button" value="לפרטי המתכון" (click)="details()">
+</div> -->
+
+<mat-card class="example-card" >
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image" style=" background-image: url('../../assets/images/{{recipe.Image}}')"></div>
+      <mat-card-title> {{recipe.Name}}</mat-card-title>
+      <mat-card-subtitle >{{recipe.Level|stars}} :דרגת קושי  </mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="../../assets/images/{{recipe.Image}}" alt="{{recipe.Name}}">
+    <mat-card-actions>
+      <button mat-button (click)="details()"> למתכון</button>
+      
+    </mat-card-actions>
+  </mat-card>

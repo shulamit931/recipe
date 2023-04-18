@@ -1,0 +1,21 @@
+<div dir="rtl">
+    <h1>edit Recipe</h1>
+    <p>{{recipe.Name}}</p>
+    <p>{{recipe.Level}}</p>
+    <p>{{recipe.PreparationTimeInMinute}}</p>
+    <img src="../../assets/images/{{recipe.Image}}">
+    <p>המצרכים</p>
+    <div *ngFor="let item of edittedRecipe.Layers">
+        <input [(ngModel)]="item.Description" class="description"> <br>
+        <p *ngFor="let var of item.Components;let j=index">
+            <input [(ngModel)]="item.Components[j]">
+        </p>
+    </div>
+    <div>
+        <p>הוראות הכנה</p>
+        <div *ngFor="let item of recipe.Preparation;let i=index">
+          <input type="text" [(ngModel)]="edittedRecipe.Preparation[i]">
+        </div>
+    </div>
+    <input type="button" (click)="editRecipe()">
+</div>
